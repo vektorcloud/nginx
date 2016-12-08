@@ -1,4 +1,4 @@
-FROM quay.io/vektorcloud/base:latest
+FROM quay.io/vektorcloud/base:3.4
 
 RUN apk add --no-cache nginx && \
     mkdir -p /var/cache/nginx /var/log/nginx && \
