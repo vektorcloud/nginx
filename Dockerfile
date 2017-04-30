@@ -1,4 +1,4 @@
-FROM quay.io/vektorcloud/base:3.4
+FROM quay.io/vektorcloud/base:3.5
 
 RUN apk add --no-cache nginx && \
     mkdir -p /var/cache/nginx /var/log/nginx && \
@@ -6,4 +6,4 @@ RUN apk add --no-cache nginx && \
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-CMD [ "nginx" ]
+ENTRYPOINT [ "nginx" ]
