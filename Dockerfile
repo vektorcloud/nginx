@@ -1,9 +1,10 @@
 FROM quay.io/vektorcloud/base:3.6
 
-RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
-    apk add --no-cache nginx@edge nginx-mod-http-geoip@edge && \
-    mkdir -p /var/cache/nginx /var/log/nginx && \
+RUN apk add --no-cache nginx && \
+    mkdir -p /var/cache/nginx /var/log/nginx /run/nginx && \
     chown -Rf nginx. /var/cache/nginx /var/log/nginx
 
+COPY nginx.conf /etc/nginx/
+COPY default.conf /etc/nginx/conf.d/
+
 ENTRYPOINT [ "nginx" ]
-CMD ["-g", "daemon off; error_log  /dev/stderr info; access_log /dev/stdout;"]
