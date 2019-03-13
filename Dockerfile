@@ -5,4 +5,6 @@ RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repo
     mkdir -p /var/cache/nginx /var/log/nginx /run/nginx && \
     chown -Rf nginx. /var/cache/nginx /var/log/nginx /run/nginx
 
+COPY default.conf /etc/nginx/conf.d/default.conf
+
 ENTRYPOINT [ "nginx" ]
