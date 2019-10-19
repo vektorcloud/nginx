@@ -1,6 +1,6 @@
 # nginx
 
-![circleci][circleci]
+[![circleci][circleci]](https://circleci.com/gh/vektorcloud/nginx)
 
 Alpine-based Nginx image
 
