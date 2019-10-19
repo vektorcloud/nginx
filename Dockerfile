@@ -7,4 +7,4 @@ RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repo
 
 COPY default.conf /etc/nginx/conf.d/default.conf
 
-ENTRYPOINT ["nginx", "-g", "daemon off; error_log /dev/stderr info;"]
+ENTRYPOINT ["nginx", "-g", "daemon off; error_log /dev/stderr info; pid /var/run/nginx.pid;"]
