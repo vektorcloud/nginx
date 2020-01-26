@@ -1,4 +1,4 @@
-FROM quay.io/vektorcloud/base:3.9
+FROM quay.io/vektorcloud/base:3.11
 
 RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
     apk add --no-cache nginx@edge nginx-mod-http-geoip@edge && \
